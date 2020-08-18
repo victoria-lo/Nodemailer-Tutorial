@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Nodemailer Tutorial</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="margin-top: 3em;">Welcome to NodeMailer Tutorial</h1>
+      <p>
+        Here's a sample Contact Form below. Check <a href="">repo</a> to see
+        full code.
+      </p>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2 class="title">Contact Us</h2>
+            <p>
+              Let us know what you think! In order to provide better service,
+              please do not hesitate to give us your feedback. Thank you.
+            </p>
+            <hr />
+            <form id="contact-form" method="POST">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      placeholder="Name"
+                      id="name"
+                      type="text"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      placeholder="Email"
+                      id="email"
+                      type="email"
+                      class="form-control"
+                      aria-describedby="emailHelp"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  placeholder="Subject"
+                  id="subject"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  placeholder="Message"
+                  id="message"
+                  class="form-control"
+                  rows="1"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
