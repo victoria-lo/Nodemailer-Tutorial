@@ -1,3 +1,4 @@
+import axios from "axios";
 const form = document.getElementById("contact-form");
 
 const formEvent = form.addEventListener("submit", (event) => {
@@ -16,7 +17,7 @@ const sendMail = (mail) => {
   return new Promise((resolve, reject) => {
     axios({
       method: "POST",
-      url: "https://nodemailer-vic-lo.herokuapp.com/send",
+      url: "/send",
       data: mail,
     })
       .then((response) => {
