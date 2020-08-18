@@ -12,6 +12,8 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use("/public", express.static(process.cwd() + "/public")); //make public static
+
 const transporter = nodemailer.createTransport({
   host: "smtp.live.com", //replace with your email provider
   port: 587,
@@ -51,7 +53,7 @@ app.post("/send", (req, res) => {
 
 //Index page (static HTML)
 app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "/index.html");
+  res.sendFile(process.cwd() + "/public/index.html");
 });
 
 /*************************************************/
