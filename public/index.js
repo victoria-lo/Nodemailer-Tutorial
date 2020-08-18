@@ -2,8 +2,8 @@ const form = document.getElementById("contact-form");
 
 const formEvent = form.addEventListener("submit", (event) => {
   event.preventDefault();
-  let mail = new FormData();
-
+  let mail = new FormData(form);
+  /*
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const subject = document.getElementById("subject").value;
@@ -13,6 +13,7 @@ const formEvent = form.addEventListener("submit", (event) => {
   mail.append("email", email);
   mail.append("subject", subject);
   mail.append("message", message);
+  */
 
   sendMail(mail);
 });
