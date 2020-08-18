@@ -1,4 +1,3 @@
-import axios from "axios";
 const form = document.getElementById("contact-form");
 
 const formEvent = form.addEventListener("submit", (event) => {
@@ -14,26 +13,15 @@ const formEvent = form.addEventListener("submit", (event) => {
 });
 
 const sendMail = (mail) => {
-  return new Promise((resolve, reject) => {
-    axios({
-      method: "POST",
-      url: "/send",
-      data: mail,
-    })
-      .then((response) => {
-        if (response.data.status === "success") {
-          alert("Message Sent.");
-          resolve(response.data);
-        } else if (response.data.status === "fail") {
-          alert("Message failed to send.");
-        }
-      })
-      .catch((err) => {
-        reject({
-          stat: err.response.status,
-          msg:
-            "There was an error processing your request. Please, try again later.",
-        });
-      });
+  fetch("https://nodemailer-viclo.herokuapp.com/send", {
+    method: "post",
+    body: JSON.stringify(mail),
+  }).then((response) => {
+    if (response.data.status === "success") {
+      alert("Message Sent.");
+      resolve(response.data);
+    } else if (response.data.status === "fail") {
+      alert("Message failed to send.");
+    }
   });
 };
