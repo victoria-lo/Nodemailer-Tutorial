@@ -1,8 +1,3 @@
-/* For local debugging set to 1 */
-const DEBUG = 0;
-/* Debug variables.*/
-const PREFIX = DEBUG ? "http://localhost:5000/" : "";
-
 const form = document.getElementById("contact-form");
 
 const formEvent = form.addEventListener("submit", (event) => {
@@ -21,7 +16,7 @@ const sendMail = (mail) => {
   return new Promise((resolve, reject) => {
     axios({
       method: "POST",
-      url: PREFIX + "/send",
+      url: "https://nodemailer-vic-lo.herokuapp.com/send",
       data: mail,
     })
       .then((response) => {
