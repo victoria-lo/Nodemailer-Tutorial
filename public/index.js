@@ -2,7 +2,7 @@ const form = document.getElementById("contact-form");
 
 const formEvent = form.addEventListener("submit", (event) => {
   event.preventDefault();
-  let mail = new FormData();
+  let mail = new FormData(this);
 
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -22,11 +22,6 @@ const sendMail = (mail) => {
     method: "post",
     body: mail,
   }).then((response) => {
-    if (response.data.status === "success") {
-      alert("Message Sent.");
-      resolve(response.data);
-    } else if (response.data.status === "fail") {
-      alert("Message failed to send.");
-    }
+    alert("Message Sent.");
   });
 };
