@@ -2,7 +2,7 @@ const form = document.getElementById("contact-form");
 
 const formEvent = form.addEventListener("submit", (event) => {
   event.preventDefault();
-  let mail = new FormData(this);
+  let mail = new FormData();
 
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
