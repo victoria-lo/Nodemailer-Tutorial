@@ -8,10 +8,6 @@ const formEvent = form.addEventListener("submit", (event) => {
 
 const sendMail = (mail) => {
   fetch("https://nodemailer-vic-lo.herokuapp.com/send", {
-    headers: {
-      Accept: "application/json, application/xml, text/plain, text/html, *.*",
-      "Content-Type": "multipart/form-data",
-    },
     method: "post",
     body: mail,
   }).then((response) => {
