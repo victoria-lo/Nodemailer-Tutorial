@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const multiparty = require("multiparty");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
@@ -16,6 +17,8 @@ app.use("/public", express.static(process.cwd() + "/public")); //make public sta
 const transporter = nodemailer.createTransport({
   host: "smtp.live.com", //replace with your email provider
   port: 587,
+  secureConnection: false,
+  requireTLS: true,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
@@ -32,21 +35,31 @@ transporter.verify(function (error, success) {
 });
 
 app.post("/send", (req, res) => {
-  const mail = {
-    from: `${req.body.name} <${req.body.email}>`,
-    to: process.env.EMAIL, // receiver email,
-    subject: req.body.subject,
-    text: req.body.message,
-  };
-
-  transporter.sendMail(mail, (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("Something went wrong.");
-    } else {
-      console.log(req.body);
-      res.status(200).send("Email successfully sent to recipient!");
-    }
+  let form = new multiparty.Form();
+  let data = {};
+  form.parse(req, function (err, fields) {
+    console.log(fields);
+    Object.keys(fields).forEach(function (property) {
+      console.log(
+        "The value of the field " + property + " is " + fields[property]
+      );
+      data[property] = fields[property].toString();
+    });
+    console.log(data);
+    const mail = {
+      from: data.name,
+      to: process.env.EMAIL, // receiver email,
+      subject: data.subject,
+      text: `${data.name} <${data.email}> \n${data.message}`,
+    };
+    transporter.sendMail(mail, (err, data) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Something went wrong.");
+      } else {
+        res.status(200).send("Email successfully sent to recipient!");
+      }
+    });
   });
 });
 

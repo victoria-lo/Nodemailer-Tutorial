@@ -15,7 +15,9 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "multiparty": "^4.2.2",
     "nodemailer": "^6.4.11",
+    "nodemon": "^2.0.4",
     "parser": "^0.1.4"
   },
   "engines": {
