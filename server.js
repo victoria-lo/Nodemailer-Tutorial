@@ -29,14 +29,9 @@ transporter.verify(function (error, success) {
   }
 });
 
-//Index page (static HTML)
-app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "/index.html");
-});
-
 app.post("/send", (req, res) => {
   const mail = {
-    from: req.body.name,
+    from: req.body.email,
     to: req.body.email, // receiver email,
     subject: req.body.subject,
     text: req.body.message,
@@ -54,6 +49,11 @@ app.post("/send", (req, res) => {
       });
     }
   });
+});
+
+//Index page (static HTML)
+app.route("/").get(function (req, res) {
+  res.sendFile(process.cwd() + "/index.html");
 });
 
 /*************************************************/

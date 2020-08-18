@@ -17,5 +17,8 @@
     "express": "^4.17.1",
     "nodemailer": "^6.4.11",
     "parser": "^0.1.4"
+  },
+  "engines": {
+    "node": "12.14.1"
   }
 }
