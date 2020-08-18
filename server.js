@@ -10,6 +10,7 @@ const app = express();
 // cors
 app.use(cors({ origin: "*" }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 const transporter = nodemailer.createTransport({
   host: "smtp.live.com", //replace with your email provider
@@ -40,13 +41,10 @@ app.post("/send", (req, res) => {
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       console.log(err);
-      res.json({
-        status: mail,
-      });
+      res.status(500).send("Something went wrong.");
     } else {
-      res.json({
-        status: "success",
-      });
+      console.log(req.body);
+      res.status(200).send("Email successfully sent to recipient!");
     }
   });
 });
