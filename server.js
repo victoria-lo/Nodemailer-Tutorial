@@ -17,8 +17,6 @@ app.use("/public", express.static(process.cwd() + "/public")); //make public sta
 const transporter = nodemailer.createTransport({
   host: "smtp.live.com", //replace with your email provider
   port: 587,
-  secureConnection: false,
-  requireTLS: true,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
