@@ -40,9 +40,6 @@ app.post("/send", (req, res) => {
   form.parse(req, function (err, fields) {
     console.log(fields);
     Object.keys(fields).forEach(function (property) {
-      console.log(
-        "The value of the field " + property + " is " + fields[property]
-      );
       data[property] = fields[property].toString();
     });
     console.log(data);
