@@ -22,6 +22,6 @@ const sendMail = (mail) => {
     method: "post",
     body: mail,
   }).then((response) => {
-    alert("Message Sent.");
+    return response.json();
   });
 };

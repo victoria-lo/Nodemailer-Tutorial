@@ -53,6 +53,7 @@ app.post("/send", (req, res) => {
         res.status(500).send("Something went wrong.");
       } else {
         res.status(200).send("Email successfully sent to recipient!");
+        res.redirect("/");
       }
     });
   });
