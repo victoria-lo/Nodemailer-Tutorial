@@ -31,8 +31,8 @@ transporter.verify(function (error, success) {
 
 app.post("/send", (req, res) => {
   const mail = {
-    from: req.body.email,
-    to: req.body.email, // receiver email,
+    from: `${req.body.name} <${req.body.email}>`,
+    to: process.env.EMAIL, // receiver email,
     subject: req.body.subject,
     text: req.body.message,
   };
