@@ -1,7 +1,7 @@
 ### This is a NodeMailer Tutorial for beginners
 A Step-by-step tutorial on how to set up Nodemailer to create a contact form.
 
-👉 Read tutorial: 
+👉 Read tutorial [here](https://lo-victoria.com/build-a-contact-form-with-vanilla-js-and-nodemailer-cke19jdq2003pwis137d891dj)
 
 <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1597800228405/vqeMHTwq-.png"/>
 
