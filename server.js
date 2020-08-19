@@ -10,7 +10,6 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 // cors
 app.use(cors({ origin: "*" }));
-app.use(express.json());
 
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 
@@ -42,7 +41,7 @@ app.post("/send", (req, res) => {
     });
     console.log(data);
     const mail = {
-      from: data.name,
+      from: `${data.name} <${data.email}>`,
       to: process.env.EMAIL, // receiver email,
       subject: data.subject,
       text: `${data.name} <${data.email}> \n${data.message}`,
