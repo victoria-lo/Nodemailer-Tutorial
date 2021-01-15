@@ -14,3 +14,5 @@ A Step-by-step tutorial on how to set up Nodemailer to create a contact form.
 
 
 👉 View Demo: https://nodemailer-vic-lo.herokuapp.com/
+
+##### NOTE: Demo is disabled because I received too much spam...
