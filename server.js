@@ -14,7 +14,8 @@ app.use(cors({ origin: "*" }));
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 
 const transporter = nodemailer.createTransport({
-  service: "hotmail",
+  host: 'smtp-mail.outlook.com',
+  port: 587,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
@@ -34,7 +35,6 @@ app.post("/send", (req, res) => {
   let form = new multiparty.Form();
   let data = {};
   form.parse(req, function (err, fields) {
-    console.log(fields);
     Object.keys(fields).forEach(function (property) {
       data[property] = fields[property].toString();
     });

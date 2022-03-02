@@ -12,5 +12,9 @@ A Step-by-step tutorial on how to set up Nodemailer to create a contact form.
 - dotenv: ^8.2.0
 - Node: 12.14.1 
 
+### Usage
+1. Install dependencies: `npm install`
+2. Change env variables in `.env` file
+3. Run server: `npm start`
 
 ##### NOTE: Demo is disabled because I received too much spam...

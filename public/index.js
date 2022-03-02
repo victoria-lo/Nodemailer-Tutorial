@@ -7,7 +7,7 @@ const formEvent = form.addEventListener("submit", (event) => {
 });
 
 const sendMail = (mail) => {
-  fetch("https://nodemailer-vic-lo.herokuapp.com/send", {
+  fetch("/send", {
     method: "post",
     body: mail,
   }).then((response) => {

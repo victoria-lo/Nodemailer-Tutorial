@@ -14,7 +14,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "multiparty": "^4.2.2",
-    "nodemailer": "^6.4.11",
+    "nodemailer": "^6.7.2",
     "nodemon": "^2.0.4"
   },
   "engines": {
