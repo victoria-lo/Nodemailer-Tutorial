@@ -14,7 +14,9 @@ A Step-by-step tutorial on how to set up Nodemailer to create a contact form.
 
 ### Usage
 1. Install dependencies: `npm install`
-2. Change env variables in `.env` file
+2. Add an `.env` file in the root directory with the following variables:
+    - `EMAIL=YOUR_EMAIL`
+    - `PASS=YOUR_PASSWORD`
 3. Run server: `npm start`
 
 ##### NOTE: Demo is disabled because I received too much spam...
